@@ -76,11 +76,6 @@ const TitleSlide = () => (
       <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-yellow-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
     </div>
     
-    {/* Logo */}
-    <div className="absolute top-8 right-8 bg-yellow-400 px-4 py-2 rounded shadow-lg">
-      <span className="font-bold text-gray-900 tracking-wider">PALFINGER</span>
-    </div>
-    
     <div className="text-center z-10 px-8">
       <FadeIn>
         <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight">
@@ -160,12 +155,13 @@ const UsagePatternsSlide = () => (
       <p className="text-gray-500 mb-12">What we're observing across our development teams</p>
     </FadeIn>
     
-    <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
       {[
         { icon: '🎯', title: 'Small Tasks', desc: 'Implementation of well-scoped features and fixes', color: 'from-red-500 to-red-600' },
         { icon: '📝', title: 'Boilerplate', desc: 'Templating and code generation for repetitive patterns', color: 'from-orange-500 to-red-500' },
         { icon: '🔍', title: 'Investigation', desc: 'Debugging and issue analysis with AI assistance', color: 'from-yellow-500 to-orange-500' },
         { icon: '💡', title: 'Brainstorming', desc: 'Architecture decisions and solution exploration', color: 'from-red-600 to-red-700' },
+        { icon: '🛠️', title: 'Scripts & Tools', desc: 'Creating small utilities, specialized apps and automation tools', color: 'from-purple-500 to-red-500' },
       ].map((item, i) => (
         <FadeIn key={i} delay={200 + i * 150}>
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group">
@@ -201,8 +197,8 @@ const ToolLandscapeSlide = () => (
         { name: 'Claude Code', desc: 'Agentic AI', detail: 'Advanced autonomous coding', icon: '⚡', bg: 'bg-orange-500' },
         { name: 'Shadow Tools', desc: 'Unofficial', detail: 'Cursor, ChatGPT, etc.', icon: '👻', bg: 'bg-gray-400' },
       ].map((tool, i) => (
-        <FadeIn key={i} delay={200 + i * 150}>
-          <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-all group relative overflow-hidden">
+        <FadeIn key={i} delay={200 + i * 150} className="h-full">
+          <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-all group relative overflow-hidden h-full">
             <div className={`absolute top-0 right-0 w-20 h-20 ${tool.bg} opacity-10 rounded-bl-full group-hover:w-24 group-hover:h-24 transition-all`} />
             <span className="text-4xl mb-4 block">{tool.icon}</span>
             <h3 className="text-xl font-bold text-gray-900 mb-1">{tool.name}</h3>
@@ -410,12 +406,6 @@ const ShadowToolsSlide = () => (
           </div>
         </FadeIn>
         
-        <FadeIn delay={600}>
-          <div className="bg-red-50 border-l-4 border-red-600 rounded-r-xl p-6">
-            <h3 className="font-bold text-red-800 text-xl mb-2">Question for Exchange</h3>
-            <p className="text-red-700">How does AVL handle shadow tooling?</p>
-          </div>
-        </FadeIn>
       </div>
     </div>
   </div>
@@ -429,15 +419,16 @@ const ChallengesSlide = () => (
         <h2 className="text-4xl md:text-5xl font-bold mb-12">Challenges We're Facing</h2>
       </FadeIn>
       
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
           { icon: '🤠', title: 'Wild West Mode', desc: 'No guidelines or policies yet', severity: 'high' },
           { icon: '📉', title: 'Unknown ROI', desc: 'No impact metrics to measure success', severity: 'high' },
           { icon: '💰', title: 'Increasing Costs', desc: '~$2k/m Copilot, ~$2.5k/m Claude Code', severity: 'medium' },
           { icon: '🌪️', title: 'Rapid Change', desc: 'New tools, models, features constantly', severity: 'medium' },
+          { icon: '🧩', title: 'Code Sprawl', desc: 'Lower barriers = more scripts & tools to maintain', severity: 'medium' },
         ].map((item, i) => (
-          <FadeIn key={i} delay={200 + i * 150}>
-            <div className={`rounded-xl p-6 ${item.severity === 'high' ? 'bg-red-900/50 border border-red-700' : 'bg-white/5 border border-white/10'}`}>
+          <FadeIn key={i} delay={200 + i * 150} className="h-full">
+            <div className={`rounded-xl p-6 h-full ${item.severity === 'high' ? 'bg-red-900/50 border border-red-700' : 'bg-white/5 border border-white/10'}`}>
               <div className="flex items-start gap-4">
                 <span className="text-3xl">{item.icon}</span>
                 <div>
@@ -509,10 +500,6 @@ const ClosingSlide = () => (
           />
         ))}
       </div>
-    </div>
-    
-    <div className="absolute top-8 right-8 bg-yellow-400 px-4 py-2 rounded shadow-lg">
-      <span className="font-bold text-gray-900 tracking-wider">PALFINGER</span>
     </div>
     
     <FadeIn className="text-center z-10">
