@@ -162,6 +162,7 @@ const UsagePatternsSlide = () => (
         { icon: '🔍', title: 'Investigation', desc: 'Debugging and issue analysis with AI assistance', color: 'from-yellow-500 to-orange-500' },
         { icon: '💡', title: 'Brainstorming', desc: 'Architecture decisions and solution exploration', color: 'from-red-600 to-red-700' },
         { icon: '🛠️', title: 'Scripts & Tools', desc: 'Creating small utilities, specialized apps and automation tools', color: 'from-purple-500 to-red-500' },
+        { icon: '🧪', title: 'Testing', desc: 'Writing and generating test cases and test automation', color: 'from-green-500 to-teal-500' },
       ].map((item, i) => (
         <FadeIn key={i} delay={200 + i * 150}>
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group">
